@@ -1,0 +1,19 @@
+{
+  "name": "conf-simple",
+  "version": "1.0.0",
+  "description": "Simple config file loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nilsboy/js-conf-simple.git"
+  },
+  "author": "Nils Boysen",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^5.0.14",
+    "nconf": "^0.8.0"
+  }
+}
