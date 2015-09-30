@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 // TODO check for package.json
 // TODO load a local file?
 
@@ -16,7 +14,7 @@ nconf.argv()
 
 var configRoot = nconf.get('HOME') + '/etc/systems/'
 
-var environment = nconf.get('NODE_ENV')
+var environment = nconf.get('NODE_ENV').toLowerCase()
 if (!environment) {
   throw new Error('NODE_ENV not set')
 }
@@ -32,9 +30,6 @@ nconf.add('app-defaults-configs', {
   'type': 'literal',
   'store': appDefaultConfigs,
 })
-
-console.log(JSON.stringify(nconf, null, ' '))
-console.log('adapter: ', nconf.get('pidb'))
 
 module.exports = nconf
 
