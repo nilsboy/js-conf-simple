@@ -14,10 +14,12 @@ nconf.argv()
 
 var configRoot = nconf.get('HOME') + '/etc/systems/'
 
-var environment = nconf.get('NODE_ENV').toLowerCase()
+var environment = nconf.get('NODE_ENV')
 if (!environment) {
   throw new Error('NODE_ENV not set')
 }
+
+environment = environment.toLowerCase();
 
 var appDefaultConfigs = _loadFiles(glob(configRoot + '*.default.json'))
 var appConfigs = _loadFiles(glob(configRoot + '*.' + environment + '*.json'))
