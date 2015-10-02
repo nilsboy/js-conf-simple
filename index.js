@@ -1,4 +1,3 @@
-// TODO check for package.json
 // TODO load a local file?
 
 'use strict'
@@ -19,10 +18,24 @@ if (!environment) {
   throw new Error('NODE_ENV not set')
 }
 
-environment = environment.toLowerCase();
+environment = environment.toLowerCase()
 
 var appDefaultConfigs = _loadFiles(glob(configRoot + '*.default.json'))
 var appConfigs = _loadFiles(glob(configRoot + '*.' + environment + '*.json'))
+
+var packageJson = path.join(path.dirname(require.main.filename), (
+  'package.json'))
+
+if (fs.existsSync(packageJson)) {
+  var packageJsonConfig = JSON.parse(fs.readFileSync(packageJson))
+
+  nconf.add('package', {
+    'type': 'literal',
+    'store': {
+      'package': packageJsonConfig
+    }
+  })
+}
 
 nconf.add('app-configs', {
   'type': 'literal',
