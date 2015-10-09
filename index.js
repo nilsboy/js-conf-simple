@@ -3,6 +3,7 @@
 // TODO this instead of nconf
 // TODO make nconf available as .nconf?
 // TODO make environment part of the dir instead of the filename
+// TODO make singleton?
 
 'use strict'
 
