@@ -1,4 +1,8 @@
 // TODO load a local file?
+// TODO allow to specify which environment to load - for apps which need to access other envs
+// TODO this instead of nconf
+// TODO make nconf available as .nconf?
+// TODO make environment part of the dir instead of the filename
 
 'use strict'
 
@@ -15,7 +19,8 @@ var configRoot = nconf.get('HOME') + '/etc/systems/'
 
 var environment = nconf.get('NODE_ENV')
 if (!environment) {
-  throw new Error('NODE_ENV not set')
+  environment = 'dev'
+    // throw new Error('NODE_ENV not set')
 }
 
 environment = environment.toLowerCase()
