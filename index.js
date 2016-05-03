@@ -20,8 +20,8 @@ var configRoot = nconf.get('HOME') + '/etc/systems/'
 
 var environment = nconf.get('NODE_ENV')
 if (!environment) {
-  environment = 'dev'
-    // throw new Error('NODE_ENV not set')
+  environment = 'development'
+  console.warn("NODE_ENV not set using " + environment)
 }
 
 environment = environment.toLowerCase()
