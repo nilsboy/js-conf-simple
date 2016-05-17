@@ -4,6 +4,7 @@
 // TODO make nconf available as .nconf?
 // TODO make environment part of the dir instead of the filename
 // TODO make singleton?
+// TODO support .js config files to support Infinity, NaN and more
 
 'use strict'
 
