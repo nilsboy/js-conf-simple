@@ -5,6 +5,7 @@
 // TODO make environment part of the dir instead of the filename
 // TODO make singleton?
 // TODO support .js config files to support Infinity, NaN and more
+// TODO allow combining several files to be able to add non-sensitiv data to git?
 
 'use strict'
 
